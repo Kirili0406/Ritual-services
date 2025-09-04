@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Покой. Память — Похоронное бюро</title>
+    <meta name="description" content="Организация похорон, ритуальные услуги, репатриация, кафе, каталог товаров и сопровождение.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="index-page">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">Покой. Память</a>
+            <nav class="nav">
+                <a href="index.html" class="active">Главная</a>
+                <a href="services.html">Услуги</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="embellishment.html">Облагораживание</a>
+                <a href="cooperation.html">Сотрудничество</a>
+                <a href="faq.html">вопросы</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-fluid-bg"><canvas id="fluid-bg"></canvas></div>
+            <div class="container hero-inner">
+                <h1 class="hero-title">Достойно. Чутко. Профессионально.</h1>
+                <p class="hero-sub">Организация похорон, облагораживание места, каталог товаров, кафе для посетителей и полное сопровождение семьи.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="services.html">Посмотреть услуги</a>
+                    <a class="btn btn-ghost" href="call-specialist.html">Вызвать специалиста</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-links container">
+            <div class="grid-4">
+                <a class="card" href="services.html">
+                    <h3>Услуги</h3>
+                    <p>Полный перечень ритуальных услуг — быстро и уважительно.</p>
+                </a>
+                <a class="card" href="catalog.html">
+                    <h3>Каталог</h3>
+                    <p>Гробы, венки, кресты и аксессуары.</p>
+                </a>
+                <a class="card" href="embellishment.html">
+                    <h3>Облагораживание</h3>
+                    <p>Уборка и благоустройство мест захоронения.</p>
+                </a>
+                <a class="card" href="cafe.html">
+                    <h3>Кафе</h3>
+                    <p>Тёплое место для посетителей с угощениями и поддержкой.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="features container">
+            <article class="feature">
+                <h3>24/7 поддержка</h3>
+                <p>Выезд и консультации круглосуточно.</p>
+            </article>
+            <article class="feature">
+                <h3>Репатриация</h3>
+                <p>Оперативное оформление и доставка тела за границу.</p>
+            </article>
+            <article class="feature">
+                <h3>Индивидуальные решения</h3>
+                <p>С учётом традиций семьи и религий.</p>
+            </article>
+        </section>
+
+        <section class="container contact-cta">
+            <h2>Нужна срочная помощь?</h2>
+            <p>Нажми кнопку и напиши в WhatsApp — ответим быстро и организуем всё.</p>
+            <a class="btn btn-accent" href="https://wa.me/+77051057552?text=Здравствуйте,%20нужна%20помощь" target="_blank">Написать в WhatsApp</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Покой. Память</p>
+            <p>Тел/WhatsApp: <a href="https://wa.me/+77051057552">+77051057552</a></p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp floating -->
+    <a class="whatsapp-fab" href="https://wa.me/+77051057552?text=Здравствуйте,%20нужна%20помощь" target="_blank" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="white" d="M20.5 3.5c-1.9-1.9-5-2.6-8.3-1.9-3.4.7-6 3.3-6.7 6.7-.7 3.3 0 6.4 1.9 8.3L3 21l3.5-4.4c1.9 1.0 4.4 1.3 6.6.8 3.3-.7 5.6-3.6 5.6-6.9 0-2.2-.7-4.7-2.2-6.5z"/></svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+<style>
+     :root {
+        --bg: #0f1113;
+        --panel: #0b0c0d;
+        --muted: #9aa0a6;
+        --accent: #9ac5ff;
+        --accent-2: #ffd6a5;
+        --glass: rgba(255, 255, 255, 0.04);
+        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    /* reset */
+    
+    * {
+        box-sizing: border-box
+    }
+    
+    html,
+    body {
+        height: 100%
+    }
+    
+    body {
+        margin: 0;
+        background: linear-gradient(180deg, #08080a 0%, #0f1113 60%);
+        color: #e6eef6;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.45;
+    }
+    /* hero angel background for index only */
+    
+    body.index-page::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url("../img/angel.png") no-repeat center center;
+        background-size: cover;
+        opacity: 0.14;
+        filter: blur(0.8px);
+        pointer-events: none;
+        z-index: 0;
+    }
+    /* container */
+    
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px
+    }
+    /* header */
+    
+    .site-header {
+        backdrop-filter: blur(6px);
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        background: rgba(0, 0, 0, 0.25)
+    }
+    
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0
+    }
+    
+    .logo {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px
+    }
+    
+    .nav a {
+        color: var(--muted);
+        margin-left: 18px;
+        text-decoration: none
+    }
+    
+    .nav a.active {
+        color: var(--accent);
+        font-weight: 600
+    }
+    /* hero */
+    
+    .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 80px 0 60px;
+        min-height: 420px
+    }
+    
+    .hero-fluid-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.95
+    }
+    
+    .hero-fluid-bg canvas {
+        width: 100%;
+        height: 100%
+    }
+    
+    .hero-inner {
+        position: relative;
+        z-index: 2;
+        display: block;
+        text-align: center;
+        padding: 40px 20px
+    }
+    
+    .hero-title {
+        font-size: 36px;
+        margin: 0 0 12px
+    }
+    
+    .hero-sub {
+        color: var(--muted);
+        max-width: 720px;
+        margin: 0 auto 20px
+    }
+    
+    .hero-cta {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        margin-top: 12px
+    }
+    /* quick links */
+    
+    .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-top: 20px
+    }
+    
+    .card {
+        display: block;
+        padding: 18px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit
+    }
+    
+    .card h3 {
+        margin: 0 0 6px
+    }
+    /* buttons */
+    
+    .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: inherit;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.06)
+    }
+    
+    .btn-primary {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #071023;
+        border: 0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45)
+    }
+    
+    .btn-ghost {
+        background: var(--glass);
+        border: 1px solid rgba(255, 255, 255, 0.04)
+    }
+    
+    .btn-accent {
+        background: linear-gradient(90deg, #6dd3ff, #80ffa3);
+        color: #061118
+    }
+    /* features */
+    
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 34px
+    }
+    
+    .feature {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+    /* services grid */
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 20px
+    }
+    
+    .service-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+    
+    .card-actions {
+        margin-top: 12px;
+        display: flex;
+        gap: 10px
+    }
+    /* products */
+    
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 20px
+    }
+    
+    .product-card {
+        background: var(--panel);
+        padding: 12px;
+        border-radius: 10px;
+        color: var(--muted);
+        text-align: center
+    }
+    
+    .product-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px
+    }
+    
+    .price {
+        font-weight: 700;
+        margin-top: 8px
+    }
+    /* embellishment, cafe */
+    
+    .embellish-list article,
+    .menu-item {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 12px
+    }
+    /* contact form */
+    
+    .contact-form label {
+        display: block;
+        margin-bottom: 12px
+    }
+    
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: transparent;
+        color: inherit
+    }
+    /* footer */
+    
+    .site-footer {
+        padding: 24px 0;
+        color: var(--muted);
+        border-top: 1px solid rgba(255, 255, 255, 0.02);
+        text-align: center
+    }
+    /* WhatsApp FAB */
+    
+    .whatsapp-fab {
+        position: fixed;
+        right: 18px;
+        bottom: 90px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: linear-gradient(180deg, #25D366, #128C7E);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+        color: white;
+        z-index: 120;
+        font-weight: 600;
+    }
+    /* Memorial ribbon (front) - ровная, плывущая справа->слева */
+    
+    .memorial-ribbon {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 84px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        z-index: 9999;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.96);
+        border-top: 2px solid rgba(255, 255, 255, 0.06);
+    }
+    /* track: повторяемая строка текста */
+    
+    .memorial-track {
+        display: flex;
+        gap: 48px;
+        padding-left: 100%;
+        animation: ribbonScroll 18s linear infinite;
+        will-change: transform;
+    }
+    
+    .memorial-track span {
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 3px;
+        font-size: 20px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    
+    @keyframes ribbonScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-80%);
+        }
+    }
+    /* FAQ details style */
+    
+    details {
+        background: var(--panel);
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 10px
+    }
+    
+    details summary {
+        cursor: pointer;
+        font-weight: 600
+    }
+    
+    details p {
+        color: var(--muted);
+        margin: 8px 0 0
+    }
+    /* responsive */
+    
+    @media (max-width:1000px) {
+        .grid-4 {
+            grid-template-columns: repeat(2, 1fr)
+        }
+        .product-grid {
+            grid-template-columns: repeat(2, 1fr)
+        }
+        .services-grid {
+            grid-template-columns: 1fr
+        }
+    }
+    
+    @media (max-width:600px) {
+        .grid-4 {
+            grid-template-columns: 1fr
+        }
+        .product-grid {
+            grid-template-columns: 1fr
+        }
+        .hero-title {
+            font-size: 22px
+        }
+        .memorial-track span {
+            font-size: 14px;
+            letter-spacing: 1.5px
+        }
+    }
+     /* Фон с ангелом для index.html */
+    
+    body.index-page::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url("https://png.pngtree.com/png-vector/20250521/ourlarge/pngtree-ascension-day-white-angel-png-image_16341629.png") no-repeat center center;
+        background-size: cover;
+        /* чтобы ангел был на всю страницу */
+        opacity: 0.15;
+        /* можно увеличить/уменьшить видимость */
+        pointer-events: none;
+        z-index: 0;
+    }
+</style>
+
+</html>
